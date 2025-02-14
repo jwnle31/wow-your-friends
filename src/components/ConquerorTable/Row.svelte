@@ -42,10 +42,10 @@
     <td class:note={verified.note} use:tooltip={verified.note}>
       {name}
     </td>
-    <td>
+    <td class="detail">
       {formattedDate}
     </td>
-    <td>
+    <td class="detail">
       {platform}
     </td>
   {/if}
@@ -80,4 +80,8 @@
   }
 
   .note::after { content: '*' }
+
+  .detail {
+    font-size: 0.75em;
+  }
 </style>

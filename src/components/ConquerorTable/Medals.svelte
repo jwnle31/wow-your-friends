@@ -6,34 +6,38 @@
   export let flags: Flag[];
 </script>
 
-<div>
+<div class="icons">
+  
   {#if proofType === 'video'}
-    <PixelIcon src="icons/video.png" alt="Video proof" />
+    <span><PixelIcon src="icons/video.png" alt="Video proof" /></span>
   {:else}
-    <PixelIcon src="icons/screenshot.png" alt="Screenshot proof" />
+    <span><PixelIcon src="icons/screenshot.png" alt="Screenshot proof" /></span>
   {/if}
   {#if flags.includes('double')}
-    <PixelIcon src="icons/moonberry.png" alt="Double golden!" />
+    <span><PixelIcon src="icons/moonberry.png" alt="Double golden!" /></span>
   {/if}
   {#if flags.includes('nks')}
-    <PixelIcon src="icons/key.png" alt="No key skip!" />
+    <span><PixelIcon src="icons/key.png" alt="No key skip!" /></span>
   {/if}
   {#if flags.includes('pre202')}
-    <PixelIcon src="icons/ghostberry.png" alt="Pre-202 run!" />
+    <span><PixelIcon src="icons/ghostberry.png" alt="Pre-202 run!" /></span>
   {/if}
   {#if flags.includes('dts')}
-    <PixelIcon src="icons/pink-crystal.png" alt="Dash Trigger skip!" />
+    <span><PixelIcon src="icons/pink-crystal.png" alt="Dash Trigger skip!" /></span>
   {/if}
   {#if flags.includes('meme')}
-    <PixelIcon src="icons/eenox.png" alt="Meme run...why" />
+    <span><PixelIcon src="icons/eenox.png" alt="Meme run...why" /></span>
   {/if}
 </div>
 
-<style lang="scss">
+<style>
   div {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    justify-items: center;
-    align-items: center;
+    display: flex;
+  }
+
+  span {
+    display: inline-flex;
+    width: 1.7em;
+    justify-content: center;
   }
 </style>

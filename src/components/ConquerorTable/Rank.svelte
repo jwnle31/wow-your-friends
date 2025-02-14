@@ -25,6 +25,7 @@
 <style lang="scss">
   div {
     display: grid;
+    font-size: 1.25em;
     align-items: center;
     justify-content: center;
     &.berry {

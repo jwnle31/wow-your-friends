@@ -7,8 +7,8 @@
   $: suffix = (rank > 0) ? getOrdinalSuffix(rank) : '';
 </script>
 
-{#if rank > 0}
-  <div class:berry={rank < 4}>
+<div class:berry={rank > 0 && rank < 4}>
+  {#if rank > 0}
     {#if rank === 1}
       <PixelIcon src="icons/goldberry.png" alt="Golden berry icon" />
     {:else if rank === 2}
@@ -17,10 +17,10 @@
       <PixelIcon src="icons/bronzeberry.png" alt="Bronze berry icon" />
     {/if}
     <span class="rank">{rank}<sup>{suffix}</sup></span>
-  </div>
-{:else}
-  -
-{/if}
+  {:else}
+    -
+  {/if}
+</div>
 
 <style lang="scss">
   div {

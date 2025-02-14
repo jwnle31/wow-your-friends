@@ -8,7 +8,7 @@
 </script>
 
 {#if rank > 0}
-  <div class={rank >= 4 ? 'padded' : ''}>
+  <div class:berry={rank < 4}>
     {#if rank === 1}
       <PixelIcon src="icons/goldberry.png" alt="Golden berry icon" />
     {:else if rank === 2}
@@ -16,26 +16,27 @@
     {:else if rank === 3}
       <PixelIcon src="icons/bronzeberry.png" alt="Bronze berry icon" />
     {/if}
-    <span>{rank}<sup>{suffix}</sup></span>
+    <span class="rank">{rank}<sup>{suffix}</sup></span>
   </div>
 {:else}
   -
 {/if}
 
-<style>
+<style lang="scss">
   div {
-    display: flex;
-    justify-content: left;
+    display: grid;
     align-items: center;
-    gap: 0.4em;
+    justify-content: center;
+    &.berry {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 
-  .padded {
-    padding-left: 1.6em;
+  .rank {
+    text-align: center;
   }
 
   sup {
-    font-size: 0.8em;
-    vertical-align: super;
+    font-size: 0.6em;
   }
 </style>

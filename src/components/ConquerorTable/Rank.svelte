@@ -1,9 +1,10 @@
 <script lang="ts">
-  import { getOrdinalNumber } from "../utils";
+  import { getOrdinalSuffix } from "../utils";
   import PixelIcon from "../shared/PixelIcon.svelte";
 
   export let rank: number;
-  $: placement = (rank > 0) ? getOrdinalNumber(rank) : '-';
+
+  $: suffix = (rank > 0) ? getOrdinalSuffix(rank) : '';
 </script>
 
 {#if rank > 0}
@@ -15,7 +16,7 @@
     {:else if rank === 3}
       <PixelIcon src="icons/bronzeberry.png" alt="Bronze berry icon" />
     {/if}
-    {placement}
+    <span>{rank}<sup>{suffix}</sup></span>
   </div>
 {:else}
   -
@@ -31,5 +32,10 @@
 
   .padded {
     padding-left: 1.6em;
+  }
+
+  sup {
+    font-size: 0.8em;
+    vertical-align: super;
   }
 </style>

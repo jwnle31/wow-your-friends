@@ -35,8 +35,10 @@
   </td>
   {#if shortenRow}
     <td>
-      <p class:note={verified.note} use:tooltip={verified.note}>{name}</p>
-      <p>{date} - {platform}</p>
+      <div>
+        <p class:note={verified.note} use:tooltip={verified.note}>{name}</p>
+        <p class="detail">{date} · {platform}</p>
+      </div>
     </td>
   {:else}
     <td class:note={verified.note} use:tooltip={verified.note}>
@@ -76,7 +78,9 @@
 
   td {
     padding: 0.4em;
-    text-align: left;
+    > div {
+      margin-left: 2em;
+    }
   }
 
   .note::after { content: '*' }

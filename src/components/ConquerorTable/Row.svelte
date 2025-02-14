@@ -76,7 +76,7 @@
 
   td {
     padding: 0.4em;
-    text-align: center;
+    text-align: left;
   }
 
   .note::after { content: '*' }

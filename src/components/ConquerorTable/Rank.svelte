@@ -7,7 +7,7 @@
 </script>
 
 {#if rank > 0}
-  <div>
+  <div class={rank >= 4 ? 'padded' : ''}>
     {#if rank === 1}
       <PixelIcon src="icons/goldberry.png" alt="Golden berry icon" />
     {:else if rank === 2}
@@ -24,7 +24,12 @@
 <style>
   div {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
+    gap: 0.4em;
+  }
+
+  .padded {
+    padding-left: 1.6em;
   }
 </style>

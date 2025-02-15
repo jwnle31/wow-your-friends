@@ -9,12 +9,16 @@
 
 <div class:berry={rank > 0 && rank < 4}>
   {#if rank > 0}
-    {#if rank === 1}
-      <PixelIcon src="icons/goldberry.png" alt="Golden berry icon" />
-    {:else if rank === 2}
-      <PixelIcon src="icons/silverberry.png" alt="Silver berry icon" />
-    {:else if rank === 3}
-      <PixelIcon src="icons/bronzeberry.png" alt="Bronze berry icon" />
+    {#if rank < 4}
+      <div>
+        {#if rank === 1}
+          <PixelIcon src="icons/goldberry.png" alt="Golden berry icon" />
+        {:else if rank === 2}
+          <PixelIcon src="icons/silverberry.png" alt="Silver berry icon" />
+        {:else if rank === 3}
+          <PixelIcon src="icons/bronzeberry.png" alt="Bronze berry icon" />
+        {/if}
+      </div>
     {/if}
     <span class="rank">{rank}<sup>{suffix}</sup></span>
   {:else}
@@ -30,6 +34,10 @@
     justify-content: center;
     &.berry {
       grid-template-columns: repeat(3, 1fr);
+      div:first-child {
+        display: flex;
+        justify-content: right;
+      }
     }
   }
 

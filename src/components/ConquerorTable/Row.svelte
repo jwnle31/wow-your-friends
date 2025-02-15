@@ -78,8 +78,8 @@
 
   td {
     padding: 0.4em;
-    > div {
-      margin-left: 2em;
+    :first-child {
+      min-width: 6em;
     }
   }
 
